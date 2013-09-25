@@ -1,29 +1,21 @@
-application = {
-	content = {
-		width = 320,
-		height = 480, 
-		scale = "letterBox",
-		fps = 30,
-		
-		--[[
-        imageSuffix = {
-		    ["@2x"] = 2,
-		}
-		--]]
-	},
-
-    --[[
-    -- Push notifications
-
-    notification =
-    {
-        iphone =
-        {
-            types =
-            {
-                "badge", "sound", "alert", "newsstand"
+print("model ::::: "..system.getInfo("model"))
+if(system.getInfo("model") == "iPad") then
+    application = {
+            content = {
+                    width =  768,
+                    height = 1024, 
+                    scale = "letterBox",
+                    fps = 30,
             }
-        }
     }
-    --]]    
-}
+else
+        application = {
+            content = {
+                    width =  640,
+                    height = 1124, 
+                    scale = "letterBox",
+                    fps = 30,
+            }
+    }
+
+end
