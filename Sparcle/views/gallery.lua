@@ -7,6 +7,7 @@
 local storyboard = require( "storyboard" )
 local scene = storyboard.newScene()
 require("helpers.GroupsAndListners")
+local webView
 ---------------------------------------------------------------------------------
 -- BEGINNING OF YOUR IMPLEMENTATION
 ---------------------------------------------------------------------------------
@@ -24,11 +25,14 @@ function scene:createScene( event )
         --layoutItems[1].name = "imageBG"
     end
     --layoutItems.isVisible = false
-    local webView = native.newWebView( 0, 0, display.contentWidth, (display.contentHeight-200))
+
+    webView = native.newWebView( 0, 0, display.contentWidth, (display.contentHeight-200))
     print(display.contentHeight-130)
     webView:request( "assets/index.html" , system.ResourceDirectory)
     navigationGroup:toFront()
     mainMenuGroupItems:toFront()
+    print(webView)
+    
     --navigationGroup:toFront()
 end
 
@@ -46,6 +50,9 @@ end
 -- Called when scene is about to move offscreen:
 function scene:exitScene( event )
 	print( "HS: exitScene event" )
+        webView:removeSelf()
+        webView = nil
+        print(webView)
 		--vary:removeEventListener( "touch", vary)
 	
 end
