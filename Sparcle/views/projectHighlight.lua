@@ -1,4 +1,5 @@
 local storyboard = require("storyboard")
+local slideView = require("views.slideView")
 local scene = storyboard.newScene()
 
 -- Called when the scene's view does not exist:
@@ -10,7 +11,12 @@ function scene:createScene( event)
         local imageBG1 = display.newImage("assets/img/bgLower.jpg", display.contentHeight*display.contentWidth)
         --layoutItems[1].name = "imageBG"
     end
+    --local a = {"assets/edw.jpg" , "assets/vivel-logo-big.jpg","assets/vivel-logo-big.jpg","assets/edw.jpg","assets/edw.jpg"}
+---slideView.imgGallery(a)
     mainMenuGroupItems:toFront()
+    local a = {"assets/img/img1.jpg" , "assets/img/img2.jpg","assets/img/img3.jpg","assets/img/img4.jpg","assets/img/img2.jpg"}
+    slideView.new(a)
+    navigationGroup:toFront()
 end
 
 

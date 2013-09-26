@@ -39,7 +39,21 @@ function scene:createScene( event)
         
         --layoutItems[1].name = "imageBG"
     else
-        local imageBG1 = display.newImage("assets/img/bg2.jpg", display.contentHeight*display.contentWidth)
+        local imageBG1 = display.newImage(aboutSparcleViewGroup , "assets/img/bg2.jpg", display.contentHeight*display.contentWidth)
+        local centerImg = display.newImage(aboutSparcleViewGroup, "assets/img/circle-image.png", 250 , 160)
+        local projectHighlightsArrow = display.newImage(aboutSparcleViewGroup, "assets/img/arrow.png", 750 , 300)
+        local projectHighlightsText = display.newText(aboutSparcleViewGroup, "Project Highlights" , 800 , 300 ,native.systemFontBold, 20)
+        projectHighlightsText:addEventListener( "tap", bulletsClick)
+        local virtualTourArrow = display.newImage(aboutSparcleViewGroup , "assets/img/arrow.png", 750 , 350)
+        local virtualTourText = display.newText(aboutSparcleViewGroup , "Virtual Tour" , 800 , 350 ,native.systemFontBold, 20)
+        virtualTourText:addEventListener("tap", bulletsClick)
+        local floorPlansArrow = display.newImage(aboutSparcleViewGroup ,"assets/img/arrow.png", 750 , 400)
+        local floorPlansText = display.newText(aboutSparcleViewGroup ,"Floor Plans" , 800 , 400 ,native.systemFontBold, 20)
+        floorPlansText:addEventListener("tap", bulletsClick)
+        local constructionUpdatesArrow= display.newImage(aboutSparcleViewGroup , "assets/img/arrow.png", 750 , 450)
+        local constructionUpdatesText = display.newText(aboutSparcleViewGroup , "Construction Updates" , 800 , 450 ,native.systemFontBold, 20)
+        constructionUpdatesText:addEventListener("tap", bulletsClick)
+        
         --layoutItems[1].name = "imageBG"
     end
     
