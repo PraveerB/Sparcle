@@ -1,9 +1,10 @@
+
+
 local storyboard = require("storyboard")
 local scene = storyboard.newScene()
-require("helpers.GroupsAndListners")
 
 -- Called when the scene's view does not exist:
-function scene:createScene( event )
+function scene:createScene( event)
     if(system.getInfo("model") == "iPad") then
         local imageBG1 = display.newImage("assets/img/bg2.jpg", display.contentHeight*display.contentWidth)
         --layoutItems[1].name = "imageBG"
@@ -11,9 +12,7 @@ function scene:createScene( event )
         local imageBG1 = display.newImage("assets/img/bgLower.jpg", display.contentHeight*display.contentWidth)
         --layoutItems[1].name = "imageBG"
     end
-    createMenuGroup()
     mainMenuGroupItems:toFront()
-    navigationGroup:toFront()
 end
 
 

@@ -104,9 +104,9 @@ local function sliderBartouch( event )
         pos = math.round(pos)
         print(pos)
         if pos == 1 then
-           storyboard.gotoScene( 'views.feedback', "flip", 400)
+           storyboard.gotoScene( 'views.aboutSparcle', "flip", 400)
         elseif pos == 2 then
-            storyboard.gotoScene( 'views.gallery', "flip", 400)
+            storyboard.gotoScene( 'views.lifestyle', "flip", 400)
         end
     end
     return true
