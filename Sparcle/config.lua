@@ -11,8 +11,8 @@ if(system.getInfo("model") == "iPad") then
 else
         application = {
             content = {
-                    width =  640,
-                    height = 1124, 
+                    width =  600,
+                    height = 1024, 
                     scale = "letterBox",
                     fps = 30,
             }
