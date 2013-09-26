@@ -20,34 +20,34 @@ local function buttonClick(e)
 end
 
 function createMainMenuGroup()
-    local menu = display.newImage(mainMenuGroupItems , "assets/menu.png", display.viewableContentWidth-62, display.viewableContentHeight-52)
+    local menu = display.newImage(mainMenuGroupItems , "assets/img/menu.png", display.viewableContentWidth-62, display.viewableContentHeight-52)
     mainMenuGroupItems[1].name = "menu"
     menu:addEventListener( "touch", buttonClick )
     
-    local music = display.newImage(mainMenuGroupItems , "assets/music.png", display.contentWidth-(62*2-5), display.contentHeight-57)
+    local music = display.newImage(mainMenuGroupItems , "assets/img/music.png", display.contentWidth-(62*2-5), display.contentHeight-57)
     mainMenuGroupItems[2].name = "music"
     music:addEventListener( "touch", buttonClick )
 end
 
 
 function createSubMenuGroup()
-    local menuClicked = display.newImage(subMenuGroupItems , "assets/menu.png", display.viewableContentWidth-62, display.viewableContentHeight-52)
+    local menuClicked = display.newImage(subMenuGroupItems , "assets/img/menu.png", display.viewableContentWidth-62, display.viewableContentHeight-52)
     subMenuGroupItems[1].name = "menuClicked"
     menuClicked:addEventListener( "touch", buttonClick )
     
-    local contact = display.newImage(subMenuGroupItems , "assets/contact.png", display.contentWidth-62, display.contentHeight-(40+52))
+    local contact = display.newImage(subMenuGroupItems , "assets/img/contact.png", display.contentWidth-62, display.contentHeight-(40+52))
     subMenuGroupItems[2].name = "contact"
     contact:addEventListener( "touch", buttonClick )
 
-    local download = display.newImage(subMenuGroupItems , "assets/download.png", display.contentWidth-62, display.contentHeight-(40+52+39))
+    local download = display.newImage(subMenuGroupItems , "assets/img/download.png", display.contentWidth-62, display.contentHeight-(40+52+39))
     subMenuGroupItems[3].name = "download"
     download:addEventListener( "touch", buttonClick )
 
-    local feedback = display.newImage(subMenuGroupItems , "assets/feedback.png", display.contentWidth-61, display.contentHeight-(40+52+39+40+1))
+    local feedback = display.newImage(subMenuGroupItems , "assets/img/feedback.png", display.contentWidth-61, display.contentHeight-(40+52+39+40+1))
     subMenuGroupItems[4].name = "feedback"
     feedback:addEventListener( "touch", buttonClick )
 
-    local notification = display.newImage(subMenuGroupItems , "assets/notification.png", display.contentWidth-61, display.contentHeight-(40+52+39+40+44+1))
+    local notification = display.newImage(subMenuGroupItems , "assets/img/notification.png", display.contentWidth-61, display.contentHeight-(40+52+39+40+44+1))
     subMenuGroupItems[5].name = "notification"
     notification:addEventListener( "touch", buttonClick )
 end

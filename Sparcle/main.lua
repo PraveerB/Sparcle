@@ -13,17 +13,24 @@ currentZoomLavel= 0
 
 local imageBG
 if(system.getInfo("model") == "iPad") then
-    imageBG = display.newImage( "assets/bg1.jpg", display.contentHeight*display.contentWidth)
+    imageBG = display.newImage( "assets/img/bg1.jpg", display.contentHeight*display.contentWidth)
 else
-    imageBG = display.newImage("assets/bgLower.jpg", display.contentHeight*display.contentWidth)
+    imageBG = display.newImage("assets/img/bgLower.jpg", display.contentHeight*display.contentWidth)
 end
 
 local function buttonClick(e)
-    storyboard.gotoScene( "views.contact", "crossFade", 70 )
+    print(e.target.name)
+    if(e.target.name == "img1") then
+        local webView = native.newWebView( 0, 0, display.contentWidth, display.contentHeight)
+        webView:request( "assets/index.html" , system.ResourceDirectory)
+    elseif(e.target.name == "contact") then
+        storyboard.gotoScene( "views.contact", "crossFade", 70 )
+    end
 end
 
-local contact = display.newImage("assets/contact.png", display.contentWidth-62, display.contentHeight-(40))
-contact:addEventListener( "touch", buttonClick )
+local contact = display.newImage("assets/img/contact.png", display.contentWidth-62, display.contentHeight-(40))
+contact.name = "contact"
+contact:addEventListener( "tap", buttonClick )
 
 function multitouch(e)
 	--print('do multitouch',e.target)
@@ -46,10 +53,11 @@ function multitouch(e)
 	end
 	return true -- unfortunately, this will not propogate down if false is returned
 end
+--imageBG:toBack()
 
-
-
-imageBG:toBack()
+local img1 = display.newImage( "assets/img/img1.jpg", 40 , 40)
+img1:addEventListener("tap", buttonClick)
+img1.name = "img1"
 -- add multitouch listener the same way we would add a touch listener
 --img:addEventListener( "multitouch", multitouch )
 --img2:addEventListener( "multitouch", multitouch )

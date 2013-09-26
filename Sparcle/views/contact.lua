@@ -19,10 +19,10 @@ require("helpers.GroupsAndListners")
 -- Called when the scene's view does not exist:
 function scene:createScene( event )
     if(system.getInfo("model") == "iPad") then
-        local imageBG1 = display.newImage("assets/bg2.jpg", display.contentHeight*display.contentWidth)
+        local imageBG1 = display.newImage("assets/img/bg2.jpg", display.contentHeight*display.contentWidth)
         --layoutItems[1].name = "imageBG"
     else
-        local imageBG1 = display.newImage("assets/bgLower.jpg", display.contentHeight*display.contentWidth)
+        local imageBG1 = display.newImage("assets/img/bgLower.jpg", display.contentHeight*display.contentWidth)
         --layoutItems[1].name = "imageBG"
     end
     --layoutItems.isVisible = false
