@@ -1,20 +1,6 @@
-print("CONTACT:::::::::")
-
----------------------------------------------------------------------------------
---
--- scene1114.lua
---
----------------------------------------------------------------------------------
-
-local storyboard = require( "storyboard" )
+local storyboard = require("storyboard")
 local scene = storyboard.newScene()
 require("helpers.GroupsAndListners")
----------------------------------------------------------------------------------
--- BEGINNING OF YOUR IMPLEMENTATION
----------------------------------------------------------------------------------
--- print(table.getn(a)) 
-
--- Touch event listener for background image
 
 -- Called when the scene's view does not exist:
 function scene:createScene( event )
@@ -25,7 +11,6 @@ function scene:createScene( event )
         local imageBG1 = display.newImage("assets/img/bgLower.jpg", display.contentHeight*display.contentWidth)
         --layoutItems[1].name = "imageBG"
     end
-    --layoutItems.isVisible = false
     createMenuGroup()
     mainMenuGroupItems:toFront()
 end

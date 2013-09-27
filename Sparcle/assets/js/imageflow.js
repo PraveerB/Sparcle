@@ -71,11 +71,11 @@ function ImageFlow ()
 		slideshow:          false,          /* Toggle slideshow */
 		slideshowSpeed:     1500,           /* Time between slides in ms */
 		slideshowAutoplay:  false,          /* Toggle automatic slideshow play on startup */
-		startID:            8,              /* Image ID to begin with */
+		startID:            1,              /* Image ID to begin with */
 		glideToStartID:     true,           /* Toggle glide animation to start ID */
 		startAnimation:     false,          /* Animate images moving in from the right on startup */
 		xStep:              150,            /* Step width on the x-axis in px */
-		isFirstLoad: 		true
+		isFirstLoad:        false
 	};
 
 
@@ -588,6 +588,13 @@ function ImageFlow ()
 						my.navigationDiv.style.top =  newImageTop+'px';
 						my.navigationDiv.style.opacity =  0.0;
 						my.navigationDiv.style.height  = newImageH+'px';
+
+                                                //my.navigationDiv.style.MozTransform    = 'rotate(180deg)';
+                                                //my.navigationDiv.style.WebkitTransform = 'rotate(180deg)';
+                                                //my.navigationDiv.style.OTransform      = 'rotate(180deg)';
+                                                //my.navigationDiv.style.MsTransform     = 'rotate(180deg)';
+                                                //my.navigationDiv.style.transform       = 'rotate(180deg)';
+                                                    
 						//console.log(newImageTop);
 						
 					}
@@ -1120,7 +1127,7 @@ function ImageFlow ()
 					my.Touch.stopX = (max - my.imageID) * (my.imagesDivWidth / max);
 					my.Touch.first = false;
 				}
-				var newX = (my.Touch.getX(e) - my.Touch.startX - my.Touch.stopX);
+				var newX = -(my.Touch.getX(e) - my.Touch.startX - my.Touch.stopX);
 
 				/* Map x-axis touch coordinates in range of the ImageFlow width */
 				if(newX < 0)
