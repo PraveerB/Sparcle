@@ -1,16 +1,19 @@
 -- hide device status bar
 display.setStatusBar( display.HiddenStatusBar )
-system.activate( "multitouch" )
+--system.activate( "multitouch" )
 
 -- load library to allow global listening for display, graphics and physics function call events
-require("helpers.multitouch")
-require("helpers.pinchlib")
+--require("helpers.multitouch")
+--require("helpers.pinchlib")
 local storyboard = require "storyboard"
+
+require("helpers.GroupsAndListners")
 
 local MAXZOOMLAVEL = 50
 local MINZOOMLAVEL = 0
 currentZoomLavel= 0
 
+createNavigationGroup()
 local imageBG
 if(system.getInfo("model") == "iPad") then
     imageBG = display.newImage( "assets/img/bg1.jpg", display.contentHeight*display.contentWidth)
@@ -21,8 +24,8 @@ end
 local function buttonClick(e)
     print(e.target.name)
     if(e.target.name == "img1") then
-        local webView = native.newWebView( 0, 0, display.contentWidth, display.contentHeight)
-        webView:request( "assets/index.html" , system.ResourceDirectory)
+        --local webView = native.newWebView( 0, 0, display.contentWidth, display.contentHeight)
+        --webView:request( "assets/index.html" , system.ResourceDirectory)
     elseif(e.target.name == "contact") then
         storyboard.gotoScene( "views.contact", "crossFade", 70 )
     end
@@ -54,10 +57,7 @@ function multitouch(e)
 	return true -- unfortunately, this will not propogate down if false is returned
 end
 --imageBG:toBack()
-
-local img1 = display.newImage( "assets/img/img1.jpg", 40 , 40)
-img1:addEventListener("tap", buttonClick)
-img1.name = "img1"
+navigationGroup:toFront()
 -- add multitouch listener the same way we would add a touch listener
 --img:addEventListener( "multitouch", multitouch )
 --img2:addEventListener( "multitouch", multitouch )

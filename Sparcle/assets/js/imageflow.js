@@ -125,7 +125,8 @@ function ImageFlow ()
 				var width = this.ImageFlowDiv.offsetWidth;
 				var height = Math.round(width / my.aspectRatio);
 				document.getElementById(my.ImageFlowID+'_loading_txt').style.paddingTop = ((height * 0.5) -22) + 'px';
-				ImageFlowDiv.style.height = height + 'px';
+				ImageFlowDiv.style.height = (height-200) + 'px';
+                                console.log(height)
 
 				/* Init loading progress */
 				this.loadingProgress();
@@ -582,10 +583,10 @@ function ImageFlow ()
 
 					var newImageTop = (my.imagesDivHeight - newImageH) + ((newImageH / (my.reflectionP + 1)) * my.reflectionP);
 					if(my.isFirstLoad ) {
-						alert(newImageTop);
+						//alert(newImageTop);
 						my.isFirstLoad = false;
 						my.navigationDiv.style.position =  'absolute'; 
-						my.navigationDiv.style.top =  newImageTop+'px';
+						my.navigationDiv.style.top =  (newImageTop - 300)+'px';
 						my.navigationDiv.style.opacity =  0.0;
 						my.navigationDiv.style.height  = newImageH+'px';
 
@@ -605,7 +606,7 @@ function ImageFlow ()
 					{
 						image.style.height = newImageH + 'px';
 						image.style.width = newImageW + 'px';
-						image.style.top = newImageTop + 'px';
+						image.style.top = (newImageTop-200) + 'px';
 					}
 					image.style.visibility = 'visible';
 

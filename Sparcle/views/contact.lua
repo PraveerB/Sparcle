@@ -13,6 +13,7 @@ function scene:createScene( event )
     end
     createMenuGroup()
     mainMenuGroupItems:toFront()
+    navigationGroup:toFront()
 end
 
 
