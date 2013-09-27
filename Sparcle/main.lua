@@ -21,20 +21,6 @@ else
     imageBG = display.newImage("assets/img/bgLower.jpg", display.contentHeight*display.contentWidth)
 end
 
-local function buttonClick(e)
-    print(e.target.name)
-    if(e.target.name == "img1") then
-        --local webView = native.newWebView( 0, 0, display.contentWidth, display.contentHeight)
-        --webView:request( "assets/index.html" , system.ResourceDirectory)
-    elseif(e.target.name == "contact") then
-        storyboard.gotoScene( "views.contact", "crossFade", 70 )
-    end
-end
-
-local contact = display.newImage("assets/img/contact.png", display.contentWidth-62, display.contentHeight-(40))
-contact.name = "contact"
-contact:addEventListener( "tap", buttonClick )
-
 function multitouch(e)
 	--print('do multitouch',e.target)
 	if (e.phase == "began") then
