@@ -28,6 +28,7 @@ function scene:createScene( event )
     --layoutItems.isVisible = false
     createMenuGroup()
     mainMenuGroupItems:toFront()
+    navigationGroup:toFront()
 end
 
 

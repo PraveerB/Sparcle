@@ -1,5 +1,3 @@
-print("CONTACT:::::::::")
-
 ---------------------------------------------------------------------------------
 --
 -- scene1114.lua
@@ -9,7 +7,6 @@ print("CONTACT:::::::::")
 local storyboard = require( "storyboard" )
 local scene = storyboard.newScene()
 require("helpers.GroupsAndListners")
-
 ---------------------------------------------------------------------------------
 -- BEGINNING OF YOUR IMPLEMENTATION
 ---------------------------------------------------------------------------------
@@ -26,10 +23,13 @@ function scene:createScene( event )
         local imageBG1 = display.newImage("assets/img/bgLower.jpg", display.contentHeight*display.contentWidth)
         --layoutItems[1].name = "imageBG"
     end
-    
-    createMenuGroup()
-    mainMenuGroupItems:toFront()
+    --layoutItems.isVisible = false
+    local webView = native.newWebView( 0, 0, display.contentWidth, (display.contentHeight-200))
+    print(display.contentHeight-130)
+    webView:request( "assets/index.html" , system.ResourceDirectory)
     navigationGroup:toFront()
+    mainMenuGroupItems:toFront()
+    --navigationGroup:toFront()
 end
 
 
@@ -79,3 +79,4 @@ scene:addEventListener( "destroyScene", scene )
 ---------------------------------------------------------------------------------
 
 return scene
+
